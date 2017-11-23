@@ -76,13 +76,21 @@ class App extends React.Component {
       .catch(err => console.error(err));
   }
 
+<<<<<<< 5c94e7eca63944165b48b561621d42432d4d6fd9
   handleNewEvent(e) {
+=======
+  handleNewEvent() {
+>>>>>>> Add functions to handle new event input
     this.setState({
       newEvent: e.target.value,
     });
   }
 
+<<<<<<< 5c94e7eca63944165b48b561621d42432d4d6fd9
   handleNewAddress(e) {
+=======
+  handleNewAddress() {
+>>>>>>> Add functions to handle new event input
     this.setState({
       newEventAddress: e.target.value,
     });
@@ -153,7 +161,10 @@ class App extends React.Component {
           createEventDay={this.state.createEventDay}
           handleNewEvent={this.handleNewEvent}
           handleNewAddress={this.handleNewAddress}
+<<<<<<< 5c94e7eca63944165b48b561621d42432d4d6fd9
           createEvent={this.createEvent}
+=======
+>>>>>>> Add functions to handle new event input
         />
         <Timeline timelineData={this.state.timelineData} />
         <Search

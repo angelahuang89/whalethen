@@ -69,9 +69,12 @@ CreateEventBox.propTypes = {
   numberOfDays: propTypes.number.isRequired,
   onCreateDaySelect: propTypes.func.isRequired,
   createEventDay: propTypes.string.isRequired,
+<<<<<<< 5c94e7eca63944165b48b561621d42432d4d6fd9
   handleNewEvent: propTypes.func.isRequired,
   handleNewAddress: propTypes.func.isRequired,
   createEvent: propTypes.func.isRequired,
+=======
+>>>>>>> Add functions to handle new event input
 };
 
 export default CreateEventBox;
