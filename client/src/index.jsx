@@ -76,21 +76,29 @@ class App extends React.Component {
       .catch(err => console.error(err));
   }
 
+<<<<<<< e8484fb154c86f679eaff25aa292b3b8c025ef84
 <<<<<<< 5c94e7eca63944165b48b561621d42432d4d6fd9
   handleNewEvent(e) {
 =======
   handleNewEvent() {
 >>>>>>> Add functions to handle new event input
+=======
+  handleNewEvent(e) {
+>>>>>>> Write function that creates formatted new event
     this.setState({
       newEvent: e.target.value,
     });
   }
 
+<<<<<<< e8484fb154c86f679eaff25aa292b3b8c025ef84
 <<<<<<< 5c94e7eca63944165b48b561621d42432d4d6fd9
   handleNewAddress(e) {
 =======
   handleNewAddress() {
 >>>>>>> Add functions to handle new event input
+=======
+  handleNewAddress(e) {
+>>>>>>> Write function that creates formatted new event
     this.setState({
       newEventAddress: e.target.value,
     });
@@ -116,11 +124,15 @@ class App extends React.Component {
       address: this.state.newEventAddress,
       votes: 0,
     };
+<<<<<<< e8484fb154c86f679eaff25aa292b3b8c025ef84
     this.addNewEvent(eventObj, this.state.createEventDay);
     this.setState({
       newEvent: '',
       newEventAddress: '',
     });
+=======
+    // addNewEvent(eventObj, this.state.createEventDay);
+>>>>>>> Write function that creates formatted new event
   }
 
   countDays() {
@@ -161,10 +173,14 @@ class App extends React.Component {
           createEventDay={this.state.createEventDay}
           handleNewEvent={this.handleNewEvent}
           handleNewAddress={this.handleNewAddress}
+<<<<<<< e8484fb154c86f679eaff25aa292b3b8c025ef84
 <<<<<<< 5c94e7eca63944165b48b561621d42432d4d6fd9
           createEvent={this.createEvent}
 =======
 >>>>>>> Add functions to handle new event input
+=======
+          createEvent={this.createEvent}
+>>>>>>> Write function that creates formatted new event
         />
         <Timeline timelineData={this.state.timelineData} />
         <Search
