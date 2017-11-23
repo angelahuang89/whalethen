@@ -173,14 +173,7 @@ class App extends React.Component {
           createEventDay={this.state.createEventDay}
           handleNewEvent={this.handleNewEvent}
           handleNewAddress={this.handleNewAddress}
-<<<<<<< e8484fb154c86f679eaff25aa292b3b8c025ef84
-<<<<<<< 5c94e7eca63944165b48b561621d42432d4d6fd9
           createEvent={this.createEvent}
-=======
->>>>>>> Add functions to handle new event input
-=======
-          createEvent={this.createEvent}
->>>>>>> Write function that creates formatted new event
         />
         <Timeline timelineData={this.state.timelineData} />
         <Search
