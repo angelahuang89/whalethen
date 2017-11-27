@@ -16,11 +16,11 @@ class App extends React.Component {
     super();
     this.state = {
       timelineData: [],
-      timelineName: '', // temp until we get some more data built up
+      timelineName: 'testTimeline', // temp until we get some more data built up
       startDate: '',
       endDate: '',
       numberOfDays: 0,
-      timelineId: '', // temp until we get a way to produce these
+      timelineId: 'S1nnbsNlG', // temp until we get a way to produce these
       createEventDay: '',
       newEvent: '',
       newEventAddress: '',
@@ -42,7 +42,7 @@ class App extends React.Component {
   componentDidMount() {
     // on init function to make get request to server
     // temp using 1234 as the timelineId and test as timelineName
-    // this.getTrip();
+    this.getTrip();
   }
 
   onInputChange(event) {
@@ -52,19 +52,8 @@ class App extends React.Component {
   }
 
   onSubmit() {
-    this.setState({ timelineId: shortid.generate() }, () => {
-      const start = moment(this.state.startDate);
-      const end = moment(this.state.endDate);
-      this.setState({ numberOfDays: end.diff(start, 'days') }, () => {
-        axios.post('/timeline', {
-          timelineId: this.state.timelineId,
-          timelineName: this.state.timelineName,
-          numberOfDays: this.state.numberOfDays,
-        })
-          .then(() => this.getTrip())
-          .catch(err => console.error('error in submit ', err));
-      });
-    });
+    this.setState({ timelineId: shortid.generate() });
+    this.countDays();
   }
 
   onEnter(event) {
@@ -94,6 +83,7 @@ class App extends React.Component {
   getTrip() {
     axios.get(`/timeline/${this.state.timelineName}/${this.state.timelineId}`)
       .then(({ data }) => {
+        console.log(data)
         this.setState({
           timelineData: data,
           numberOfDays: data.length,
@@ -134,7 +124,7 @@ class App extends React.Component {
       event,
       timelineId: this.state.timelineId,
       day,
-      timelineName: this.state.timelineId,
+      timelineName: 'test',
     })
       .then(() => this.getTrip())
       .catch(err => console.error('add event error: ', err));
@@ -147,6 +137,10 @@ class App extends React.Component {
       votes: 0,
     };
     this.addNewEvent(eventObj, this.state.createEventDay);
+    this.setState({
+      newEvent: '',
+      newEventAddress: '',
+    });
   }
 
   render() {
